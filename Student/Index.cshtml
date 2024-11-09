@@ -1,0 +1,26 @@
+﻿@model DapperFullStack.Models.Student
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<form asp-action="Save" method="post" enctype="multipart/form-data">
+   <input  asp-for="Id" hidden />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Marks"></label>
+        <input asp-for="Marks" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="file"></label>
+        <input type="file" asp-for="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+

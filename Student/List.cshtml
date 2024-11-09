@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DapperFullStack.Models.Student>
+
+@{
+    ViewData["Title"] = "Users List";
+}
+
+<h1>Users List</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+
+                <td><img height="50px" width="50px" src="@user.Image" alt="Alternate Text" /></td>
+                <td>@user.Name</td>
+                <td>@user.Marks</td>
+                <td><a asp-action="Index" asp-route-id="@user.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@user.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
